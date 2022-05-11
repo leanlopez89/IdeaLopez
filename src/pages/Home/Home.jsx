@@ -1,12 +1,7 @@
-// REACT
 import React, { useContext, useEffect } from "react";
-// CONTECT
 import { SiteContext } from "../../context/SiteContext";
-// COMPONENTS
 import StoreRoutes from "./HomeComponents/StoreRoutes/StoreRoutes";
 import { Link as ScrollLink } from "react-scroll";
-
-// CSS
 import "./Home.css";
 
 const Home = () => {

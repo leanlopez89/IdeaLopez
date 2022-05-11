@@ -1,6 +1,6 @@
 import React, { useContext, useEffect } from 'react'
 import { CartContext } from '../global/CartContext'
-import { Navbar } from './Navbar';
+import { Navbar } from '../NavBar/Navbar';
 import { Icon } from 'react-icons-kit'
 import { ic_add } from 'react-icons-kit/md/ic_add'
 import { ic_remove } from 'react-icons-kit/md/ic_remove'
