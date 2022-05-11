@@ -1,91 +1,118 @@
-import React, { useContext, useEffect } from 'react'
-import { CartContext } from '../global/CartContext'
-import { Navbar } from '../NavBar/Navbar';
-import { Icon } from 'react-icons-kit'
-import { ic_add } from 'react-icons-kit/md/ic_add'
-import { ic_remove } from 'react-icons-kit/md/ic_remove'
-import { iosTrashOutline } from 'react-icons-kit/ionicons/iosTrashOutline'
-import { Link } from 'react-router-dom'
-import { useHistory } from 'react-router-dom'
-import { auth } from '../config/Config'
+import React, { useContext, useState, useEffect } from "react";
+import { useHistory } from "react-router-dom";
+import { SiteContext } from "../../context/SiteContext";
+import Checkout from "../Checkout/Checkout";
+import "./Cart.css";
 
-export const Cart = ({ user }) => {
+const Cart = () => {
+  const {
+    cart,
+    cartAmount,
+    clearCart,
+    remProduct,
+    cartTotal,
+    setIsInStore,
+    setIsInHome,
+  } = useContext(SiteContext);
 
-    const { shoppingCart, dispatch, totalPrice, totalQty } = useContext(CartContext);
+  useEffect(() => {
+    setIsInStore(false);
+    setIsInHome(false);
+  }, [setIsInStore, setIsInHome]);
 
-    const history = useHistory();
+  const history = useHistory();
 
-    useEffect(() => {
-        auth.onAuthStateChanged(user => {
-            if (!user) {
-                history.push('/login');
-            }
-        })
-    })
+  const [checkout, setCheckout] = useState(false);
 
-    return (
-        <>
-            <Navbar user={user} />
-            <>
-                {shoppingCart.length !== 0 && <h1>Cart</h1>}
-                <div className='cart-container'>
-                    {
-                        shoppingCart.length === 0 && <>
-                            <div>no items in your cart or slow internet causing trouble (Refresh the page) or you are not logged in</div>
-                            <div><Link to="/">Return to Home page</Link></div>
-                        </>
-                    }
-                    {shoppingCart && shoppingCart.map(cart => (
-                        <div className='cart-card' key={cart.ProductID}>
+  const cartAlert = () => {
+    setCheckout(true);
+  };
 
-                            <div className='cart-img'>
-                                <img src={cart.ProductImg} alt="not found" />
-                            </div>
+  const goBack = () => {
+    history.push("/");
+  };
 
-                            <div className='cart-name'>{cart.ProductName}</div>
-
-                            <div className='cart-price-orignal'>Rs {cart.ProductPrice}.00</div>
-
-                            <div className='inc' onClick={() => dispatch({ type: 'INC', id: cart.ProductID, cart })}>
-                                <Icon icon={ic_add} size={24} />
-                            </div>
-
-                            <div className='quantity'>{cart.qty}</div>
-
-                            <div className='dec' onClick={() => dispatch({ type: 'DEC', id: cart.ProductID, cart })}>
-                                <Icon icon={ic_remove} size={24} />
-                            </div>
-
-                            <div className='cart-price'>
-                                Rs {cart.TotalProductPrice}.00
-                            </div>
-
-                            <button className='delete-btn' onClick={() => dispatch({ type: 'DELETE', id: cart.ProductID, cart })}>
-                                <Icon icon={iosTrashOutline} size={24} />
-                            </button>
-                        </div>
-                    ))
-                    }
-                    {shoppingCart.length > 0 && <div className='cart-summary'>
-                        <div className='cart-summary-heading'>
-                            Cart-Summary
-                        </div>
-                        <div className='cart-summary-price'>
-                            <span>Total Price</span>
-                            <span>{totalPrice}</span>
-                        </div>
-                        <div className='cart-summary-price'>
-                            <span>Total Qty</span>
-                            <span>{totalQty}</span>
-                        </div>
-                        <Link to='cashout' className='cashout-link'>
-                            <button className='btn btn-success btn-md' style={{ marginTop: 5 + 'px' }}>
-                                Cash on delivery
-                        </button>
-                        </Link>
-                    </div>}
+  return (
+    <div className="d-flex flex-column justify-content-around align-items-center cart m-5 py-5">
+      <h1 className="pb-4">Carrito</h1>
+      {!cart.length ? (
+        <div className="emptyCart text-center d-flex flex-column justify-content-center align-items-center">
+          <p>Tu carrito está vacío.</p>
+          <span className="loadingMsg_Logo">buncits.</span>
+          <button className="mt-5" onClick={goBack}>
+            volver
+          </button>
+        </div>
+      ) : !checkout ? (
+        cart.map((item) => {
+          return (
+            <div
+              className="d-flex align-items-center cartItem flex-wrap justify-content-center my-3 mx-4 col-11"
+              key={item.id}
+            >
+              <img
+                src={item.thumbnailUrl}
+                alt=""
+                className="col-md-3 col-12 pb-3"
+              />
+              <div className="row flex-column col-md-8 col-12 py-3">
+                <div className="prodTitle d-flex justify-content-between">
+                  <span>{item.title}</span>
+                  <div className="btnContainer">
+                    <button
+                      className="mx-2"
+                      onClick={remProduct}
+                      value={item.id}
+                    >
+                      <i className="fas fa-times-circle"></i>
+                    </button>
+                  </div>
                 </div>
-            </>
-        </>
-    )
-}
+                <p>{item.description}</p>
+                <p>
+                  Cantidad: <strong>{item.amount}</strong> - Precio:{" "}
+                  <strong>$ {item.price}</strong>
+                </p>
+                <p className="prodTotal pb-4">
+                  Total: $ {item.amount * item.price}
+                </p>
+              </div>
+            </div>
+          );
+        })
+      ) : (
+        <div className="d-flex align-items-center cartItem flex-wrap justify-content-center my-3 mx-4 col-11">
+          <Checkout />
+        </div>
+      )}
+      {!cart.length || checkout ? (
+        ""
+      ) : (
+        <div className="col-11 px-0">
+          <div className="cartItem cartTotal mt-3 text-center py-3 d-flex justify-content-center">
+            <p>
+              Productos en el carrtito: <strong>{cartAmount}</strong>
+            </p>
+            <p>
+              Total:
+              <strong>
+                {" $ "}
+                {cartTotal}
+              </strong>
+            </p>
+          </div>
+          <div className="d-flex cartButtons pt-2 justify-content-center">
+            <button onClick={clearCart} className="mx-2 emptyBtn">
+              Vaciar Carrito
+            </button>
+            <button onClick={cartAlert} className="mx-2 finishBtn">
+              Finalizar Compra
+            </button>
+          </div>
+        </div>
+      )}
+    </div>
+  );
+};
+
+export default Cart;

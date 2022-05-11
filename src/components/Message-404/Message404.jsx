@@ -1,8 +1,12 @@
+import React from "react";
+import "./message404.css";
 
-export const NotFound = () => {
-    return (
-        <div>
-            Not Found 404
-        </div>
-    )
-}
+const message404 = () => {
+  return (
+    <div className="d-flex justify-content-center align-items-center">
+      <p>404 - Not Found</p>
+    </div>
+  );
+};
+
+export default message404;

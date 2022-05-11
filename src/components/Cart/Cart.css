@@ -1,0 +1,115 @@
+.cart {
+    min-height: 70vh;
+    border: 1px solid white;
+    border-radius: 30px;
+}
+
+.cart h1 {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: #3d3f41;
+}
+
+.cart .emptyCart p {
+    font-size: 1.2rem;
+    font-weight: 400;
+    margin: -5rem 0 .2rem 0;
+
+}
+
+.cart .emptyCart .loadingMsg_Logo {
+    font-size: 1rem;
+    font-weight: 900;
+    color: #fff;
+}
+
+.cart .emptyCart button {
+    background-color: #626668c9;
+    color: #fff;
+    border: 1px solid transparent;
+    border-radius: 30px;
+    font-size: .8rem;
+    margin: 2em 0;
+    padding: .5em 1rem;
+    width: 40% !important;
+    -webkit-box-shadow: 0px 11px 10px -7px rgba(0, 0, 0, 0.25);
+    box-shadow: 0px 11px 10px -7px rgba(0, 0, 0, 0.25);
+}
+
+.cartItem {
+    background-color: #6266681c;
+    border-radius: 30px;
+}
+
+.cartItem .row {
+    padding-left: 2rem;
+}
+
+.cartItem .row p {
+    font-size: 1rem;
+    color: #3d3f41;
+    padding: .3em 1rem;
+    margin: 0;
+}
+
+.cartItem .row .prodTitle span {
+    margin: 0 1rem;
+    font-size: 1.4rem;
+    font-weight: 700;
+}
+
+.cartItem .row .prodTitle .btnContainer button {
+    color: #3d3f41;
+    border: none;
+    background-color: transparent;
+    font-size: 1rem;
+    font-weight: 400;
+    -webkit-box-shadow: 0px 11px 10px -7px rgba(0, 0, 0, 0.25);
+    box-shadow: 0px 11px 10px -7px rgba(0, 0, 0, 0.25);
+}
+
+.cartItem .row .prodTotal {
+    font-size: 1rem;
+    font-weight: 700;
+}
+
+.cartTotal {
+    border-radius: 22px;
+}
+
+.cartTotal p {
+    margin-top: 1rem;
+    font-size: 1rem;
+    padding: 0 2rem;
+    color: #212529;
+}
+
+.cartButtons button {
+    background-color: #626668c9;
+    color: #fff;
+    border: 1px solid transparent;
+    border-radius: 30px;
+    font-size: .75rem;
+    margin: 2em 0;
+    padding: .5em 1.5rem;
+    justify-content: space-between;
+    -webkit-box-shadow: 0px 11px 10px -7px rgba(0, 0, 0, 0.25);
+    box-shadow: 0px 11px 10px -7px rgba(0, 0, 0, 0.25);
+}
+
+.cartButtons .finishBtn {
+    background-color: #161718c9;
+}
+
+.prodTitle .fas:hover {
+
+    color: #626668c9;
+    font-size: 1.2rem;
+}
+
+.cart .emptyCart button:hover,
+.cartButtons .finishBtn:hover,
+.cartButtons .emptyBtn:hover {
+    background-color: #fff;
+    color: #626668c9;
+}
