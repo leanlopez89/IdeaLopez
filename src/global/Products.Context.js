@@ -1,7 +1,7 @@
-import React, {createContext} from 'react';
+import React, { createContext } from 'react';
 import { db } from '../config/Config';
 
-export const ProductsContex = createContext();
+export const ProductsContext = createContext();
 
 export class ProductsContextProvider extends React.Component{
     state={
@@ -36,12 +36,4 @@ this.setState({
                     </ProductsContext.Provider>
         )
     }
-
-
-
-
-
-
-
-
 }
