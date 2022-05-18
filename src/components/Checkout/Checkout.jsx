@@ -1,5 +1,5 @@
 import React, { useContext, useState } from "react";
-import { useHistory } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 import { SiteContext } from "../../context/SiteContext";
 import { db } from "../../Firebase";
 import OrderDetail from "./CheckoutComponents/OrderDetail";
@@ -63,7 +63,7 @@ const Checkout = () => {
   };
 
   // STEP 4 - CLEAR CART - BACK TO HOMEPAGE
-  const history = useHistory();
+  const history = useLocation();
   const finishShopping = () => {
     history.push("/");
     clearCart();

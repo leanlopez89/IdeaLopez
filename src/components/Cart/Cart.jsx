@@ -1,5 +1,5 @@
 import React, { useContext, useState, useEffect } from "react";
-import { useHistory } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 import { SiteContext } from "../../context/SiteContext";
 import Checkout from "../Checkout/Checkout";
 import "./Cart.css";
@@ -20,7 +20,7 @@ const Cart = () => {
     setIsInHome(false);
   }, [setIsInStore, setIsInHome]);
 
-  const history = useHistory();
+  const history = useLocation();
 
   const [checkout, setCheckout] = useState(false);
 

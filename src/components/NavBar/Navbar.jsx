@@ -11,7 +11,7 @@ const NavBar = () => {
   return (
     <nav className="navbar navbar-expand-lg" id="navbar">
       <Link to="/" className="navbar-brand">
-        buncits.
+        Pet's Shop
       </Link>
 
       <button
@@ -28,28 +28,11 @@ const NavBar = () => {
       <div className="collapse navbar-collapse" id="navbarNavDropdown">
         <ul className="navbar-nav">
           <Link to="/" className="nav-item nav-link">
-            home
+            Home
           </Link>
-          <ScrollLink
-            to="nosotros"
-            className={
-              isInHome ? "nav-item nav-link" : "nav-item nav-link disabled"
-            }
-            smooth={true}
-          >
-            nosotros
-          </ScrollLink>
-          <ScrollLink
-            to="productos"
-            className={
-              isInHome ? "nav-item nav-link" : "nav-item nav-link disabled"
-            }
-            smooth={true}
-          >
-            productos
-          </ScrollLink>
+
           <Link to="/store" className="nav-item nav-link store">
-            <span>|</span>tienda
+            Tienda
           </Link>
           <li className="nav-item dropdown">
             <Link
@@ -61,26 +44,26 @@ const NavBar = () => {
               aria-haspopup="true"
               aria-expanded="false"
             >
-              categorías
+              Categorías
             </Link>
             <div
               className="dropdown-menu"
               aria-labelledby="navbarDropdownMenuLink"
             >
-              <Link to="/sofas" className="dropdown-item">
-                sofás
+              <Link to="/alimentos" className="dropdown-item">
+                Alimentos
               </Link>
-              <Link to="/sillas" className="dropdown-item">
-                sillas / sillones
+              <Link to="/accesorios" className="dropdown-item">
+                Accesorios
               </Link>
-              <Link to="/estanterias" className="dropdown-item">
-                estanterías
+              <Link to="/juguetes" className="dropdown-item">
+                Juguetes
               </Link>
-              <Link to="/gabinetes" className="dropdown-item">
-                gabinetes
+              <Link to="/camas" className="dropdown-item">
+                Camas y casas
               </Link>
-              <Link to="/lamparas" className="dropdown-item">
-                lámparas
+              <Link to="/salud" className="dropdown-item">
+                Salud
               </Link>
             </div>
           </li>
