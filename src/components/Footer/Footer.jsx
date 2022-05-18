@@ -4,7 +4,7 @@ import "./Footer.css";
 const footer = ({ copyright = "Todos los derechos reservados." }) => {
   return (
     <div className="footer">
-      <div className="footer_logo">PetShop</div>
+      <div className="footer_logo">Pet's Shop</div>
     </div>
   );
 };
