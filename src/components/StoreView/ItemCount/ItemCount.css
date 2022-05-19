@@ -1,5 +1,5 @@
 .btn_amount {
-    background-color: #626668c9;
+    background-color: #1d8813da;
     color: #fff;
     border-radius: 30px;
     font-size: .75rem;
@@ -11,7 +11,7 @@
 }
 
 .btn_addToCart {
-    background-color: #9ca2a6;
+    background-color: #69e28d;
     color: #fff;
     border-radius: 30px;
     font-size: .75rem;
@@ -35,5 +35,5 @@
 
 .btn_addToCart:hover {
     background-color: #fff !important;
-    color: #626668c9 !important;
+    color: #1d8813da !important;
 }

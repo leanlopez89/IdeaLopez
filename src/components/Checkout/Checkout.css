@@ -1,11 +1,11 @@
 .orderContainer {
-    border: 1px solid #3d3f41;
+    border: 1px solid #14770bda;
     border-radius: 30px;
 }
 
 .cartInfo {
     font-size: 1rem;
-    color: #3d3f41;
+    color: #14770bda;
 }
 
 .orderFinal {
@@ -15,7 +15,7 @@
 
 h2 {
     font-weight: 700;
-    color: #3d3f41;
+    color: #14770bda;
 }
 
 .form-group input {
@@ -24,7 +24,7 @@ h2 {
 
 form .btn,
 .orderGenerated button {
-    background-color: #626668c9;
+    background-color: #1d8813da;
     color: #fff;
     border: 1px solid transparent;
     border-radius: 30px;
@@ -38,7 +38,7 @@ form .btn,
 form .btn:hover,
 .orderGenerated button:hover {
     background-color: #fff;
-    color: #626668c9;
+    color: #1d8813da;
 }
 
 .orderGenerated {
@@ -51,11 +51,11 @@ form .btn:hover,
 .orderGenerated p {
     margin-top: 2rem;
     font-size: 1.4rem;
-    color: #3d3f41
+    color: #14770bda;
 }
 
 .orderGenerated h6 {
     margin-top: .2rem;
     font-size: 1rem;
-    color: #3d3f41
+    color: #14770bda;
 }

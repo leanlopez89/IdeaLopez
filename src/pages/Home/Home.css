@@ -27,7 +27,7 @@
 .info-container h2 {
     font-size: 3rem;
     font-weight: 900;
-    color: #626668;
+    color: #24a818;
     margin: 0 8rem 1.7em 0;
 }
 
@@ -35,19 +35,19 @@
 .info-container h3 {
     font-size: 1.3rem;
     font-weight: 800;
-    color: #626668;
+    color: #24a818;
 
 }
 
 .info-container p {
     font-size: .8rem;
     font-weight: 400;
-    color: #626668;
+    color: #24a818;
 }
 
 .returnBtn {
     margin: 5em 0 5em 0;
-    color: #626668;
+    color: #24a818;
 }
 
 .returnBtn:hover {

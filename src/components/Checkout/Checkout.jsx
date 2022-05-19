@@ -6,7 +6,6 @@ import OrderDetail from "./CheckoutComponents/OrderDetail";
 import "./Checkout.css";
 
 const Checkout = () => {
-  // STEP 1 - GET CONTEXT
   const { cart, cartTotal, clearCart } = useContext(SiteContext);
 
   const products = cart.map((item) => {
@@ -18,7 +17,6 @@ const Checkout = () => {
     };
   });
 
-  // STEP 2 - GET ORDER DATA
   const defaultClient = {
     cliente: { nombre: "", telefono: "", email: "", direccion: "" },
   };
@@ -35,7 +33,6 @@ const Checkout = () => {
     setOrder(thisOrder);
   };
 
-  // STEP 3 - SEND ORDER & UPDATE FIREBASE STOCK
   const [orderGenerated, setOrderGenerated] = useState("");
 
   const sendOrder = async (data) => {
@@ -62,7 +59,6 @@ const Checkout = () => {
     updateFbStock();
   };
 
-  // STEP 4 - CLEAR CART - BACK TO HOMEPAGE
   const history = useLocation();
   const finishShopping = () => {
     history.push("/");

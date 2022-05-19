@@ -7,7 +7,7 @@
 .cart h1 {
     font-size: 2.5rem;
     font-weight: 800;
-    color: #3d3f41;
+    color: #14770bda;
 }
 
 .cart .emptyCart p {
@@ -24,7 +24,7 @@
 }
 
 .cart .emptyCart button {
-    background-color: #626668c9;
+    background-color: #1d8813da;
     color: #fff;
     border: 1px solid transparent;
     border-radius: 30px;
@@ -37,7 +37,7 @@
 }
 
 .cartItem {
-    background-color: #6266681c;
+    background-color: #1d8813da;
     border-radius: 30px;
 }
 
@@ -47,7 +47,7 @@
 
 .cartItem .row p {
     font-size: 1rem;
-    color: #3d3f41;
+    color: #14770bda;
     padding: .3em 1rem;
     margin: 0;
 }
@@ -85,7 +85,7 @@
 }
 
 .cartButtons button {
-    background-color: #626668c9;
+    background-color: #1d8813da;
     color: #fff;
     border: 1px solid transparent;
     border-radius: 30px;
@@ -103,7 +103,7 @@
 
 .prodTitle .fas:hover {
 
-    color: #626668c9;
+    color: #1d8813da;
     font-size: 1.2rem;
 }
 
@@ -111,5 +111,5 @@
 .cartButtons .finishBtn:hover,
 .cartButtons .emptyBtn:hover {
     background-color: #fff;
-    color: #626668c9;
+    color: #1d8813da;
 }

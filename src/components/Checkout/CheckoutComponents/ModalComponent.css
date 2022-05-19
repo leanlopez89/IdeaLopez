@@ -13,7 +13,7 @@
 
 .modalContainer {
     padding: 2rem;
-    background-color: #9ca2a6;
+    background-color: #69e28d;
     border-radius: 30px;
 }
 
@@ -39,7 +39,7 @@
 }
 
 .modalContainer .btn {
-    background-color: #323435c9;
+    background-color: #14770bda;
     color: #fff;
     border-radius: 30px;
     font-size: .75rem;
@@ -52,10 +52,10 @@
 }
 
 .modalContainer .btnOut {
-    background-color: #626668c9;
+    background-color: #1d8813da;
 }
 
 .modalContainer .btn:hover {
     background-color: #fff;
-    color: #626668c9;
+    color: #1d8813da;
 }

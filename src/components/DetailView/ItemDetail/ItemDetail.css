@@ -7,8 +7,8 @@
 .detail_container .product_category {
     line-height: .3em;
     margin: 0 0 1.5em 0;
-    color: #212529;
-    background-color: #212529;
+    color: #14770bda;
+    background-color: #14770bda;
 
 }
 
@@ -38,7 +38,7 @@
 }
 
 .detail_container .btn_amount {
-    background-color: #626668c9;
+    background-color: #1d8813da;
     color: #fff;
     border-radius: 30px;
     font-size: .75rem;
@@ -50,7 +50,7 @@
 }
 
 .detail_container .btn_addToCart {
-    background-color: #9ca2a6;
+    background-color: #69e28d;
     color: #fff;
     border-radius: 30px;
     font-size: .75rem;
